@@ -1,13 +1,15 @@
 "use client";
 
-import React from 'react';
-import { Maximize2, Play, Layers, RotateCcw, RotateCw } from 'lucide-react';
+import React, { useState } from 'react';
+import { Maximize2, Play, Pause, Layers, RotateCcw, RotateCw } from 'lucide-react';
 
 interface PreviewAreaProps {
   aspectRatio: '16:9' | '9:16';
 }
 
 const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <div className="flex flex-col bg-black relative h-[40vh]">
       {/* Video Placeholder */}
@@ -17,22 +19,38 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
             aspectRatio === '16:9' ? 'w-full aspect-video' : 'h-full aspect-[9/16]'
           }`}
         >
-          <span className="text-gray-600 text-xs font-medium uppercase tracking-wider">
+          <span className="text-gray-600 text-[10px] font-medium uppercase tracking-widest">
             {aspectRatio} Preview
           </span>
         </div>
       </div>
 
       {/* Preview Controls */}
-      <div className="flex items-center justify-between px-6 py-3 bg-[#121212] border-t border-white/5">
-        <Maximize2 className="w-5 h-5 text-white/70 hover:text-white cursor-pointer transition-colors" />
-        <div className="flex items-center justify-center">
-          <Play className="w-8 h-8 text-white fill-white cursor-pointer hover:scale-110 transition-transform" />
+      <div className="grid grid-cols-3 items-center px-6 py-2.5 bg-[#121212] border-t border-white/5">
+        {/* Left Controls */}
+        <div className="flex items-center">
+          <Maximize2 className="w-4 h-4 text-white/70 hover:text-white cursor-pointer transition-colors" />
         </div>
-        <div className="flex items-center gap-5">
-          <Layers className="w-5 h-5 text-white/70 hover:text-white cursor-pointer transition-colors" />
-          <RotateCcw className="w-5 h-5 text-white/70 hover:text-white cursor-pointer transition-colors" />
-          <RotateCw className="w-5 h-5 text-white/70 hover:text-white cursor-pointer transition-colors" />
+
+        {/* Center Controls */}
+        <div className="flex items-center justify-center">
+          <button 
+            onClick={() => setIsPlaying(!isPlaying)}
+            className="hover:scale-110 transition-transform active:scale-95"
+          >
+            {isPlaying ? (
+              <Pause className="w-6 h-6 text-white fill-white" />
+            ) : (
+              <Play className="w-6 h-6 text-white fill-white" />
+            )}
+          </button>
+        </div>
+
+        {/* Right Controls */}
+        <div className="flex items-center justify-end gap-4">
+          <Layers className="w-4 h-4 text-white/70 hover:text-white cursor-pointer transition-colors" />
+          <RotateCcw className="w-4 h-4 text-white/70 hover:text-white cursor-pointer transition-colors" />
+          <RotateCw className="w-4 h-4 text-white/70 hover:text-white cursor-pointer transition-colors" />
         </div>
       </div>
     </div>
