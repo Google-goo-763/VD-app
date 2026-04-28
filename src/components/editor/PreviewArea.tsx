@@ -71,55 +71,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
         </DropdownMenu>
       </div>
 
-      {/* Preview Content */}
-      <div className="flex-1 flex items-center justify-center relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.03)_25%,transparent_25%),linear-gradient(-45deg,rgba(255,255,255,0.03)_25%,transparent_25%),linear-gradient(45deg,transparent_75%,rgba(255,255,255,0.03)_75%),linear-gradient(-45deg,transparent_75%,rgba(255,255,255,0.03)_75%)] bg-[length:20px_20px]"></div>
-        
-        {/* Center content */}
-        <div className="relative z-10 text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4"
-          >
-            <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-purple-500/30 to-blue-500/30 flex items-center justify-center">
-              <Video className="w-10 h-10 text-white/70" />
-            </div>
-            <h3 className="text-white text-lg font-medium">Preview Area</h3>
-            <p className="text-gray-400 text-sm max-w-xs mx-auto">
-              Your video content will appear here. Click play to preview your project.
-            </p>
-            
-            {/* Play/Pause Button */}
-            <div className="flex justify-center pt-4">
-              <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300"
-              >
-                {isPlaying ? (
-                  <Pause className="w-6 h-6" />
-                ) : (
-                  <Play className="w-6 h-6 ml-1" />
-                )}
-              </button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Aspect ratio indicator */}
-        <div className="absolute top-3 right-3 z-10">
-          <span className="px-2 py-1 text-xs font-medium text-gray-400 bg-white/10 rounded-md backdrop-blur-sm">
-            {selectedRatio}
-          </span>
-        </div>
-      </div>
-
-      {/* Bottom controls placeholder */}
-      <div className="h-16 bg-[#1a1a1a] border-t border-white/5 flex items-center justify-center">
-        <span className="text-gray-500 text-sm">Timeline controls will appear here</span>
-      </div>
+      {/* ... existing PreviewArea content ... */}
     </div>
   );
 };
