@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Upload, ChevronDown, Monitor, Smartphone, Check, Save, Sparkles } from 'lucide-react';
 import {
   DropdownMenu,
@@ -62,7 +62,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </DropdownMenuTrigger>
           <DropdownMenuContent 
             align="center" 
-            className="bg-[#1a1a1a] backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden p-1 z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300"
+            className="bg-[#1a1a1a] backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden p-1 z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300 glow-2xl bg-gradient-to-r from-purple-500/30 to-blue-500/30"
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
@@ -95,84 +95,9 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </PopoverTrigger>
           <PopoverContent 
             align="center" 
-            className="w-72 bg-[#1a1a1a] backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300"
+            className="w-72 bg-[#1a1a1a] backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300 glow-2xl bg-gradient-to-r from-purple-500/30 to-blue-500/30"
           >
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 5 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="space-y-5"
-            >
-              {/* Project Name */}
-              <div className="space-y-1.5">
-                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Project Name</label>
-                <div className="flex gap-2">
-                  <input 
-                    type="text" 
-                    value={projectName}
-                    onChange={(e) => {
-                      setProjectName(e.target.value);
-                      setIsEditing(true);
-                    }}
-                    className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 focus:outline-none focus:border-purple-500/30 transition-colors text-sm text-white"
-                    placeholder="Enter name..."
-                  />
-                  {isEditing && (
-                    <button 
-                      onClick={handleSaveName}
-                      className="bg-white text-black p-2 rounded-lg hover:bg-white/90 transition-colors"
-                    >
-                      <Sparkles size={16} />
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* Resolution Selection */}
-              <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Resolution</label>
-                <div className="grid grid-cols-3 gap-1.5">
-                  {resolutions.map((res) => (
-                    <button
-                      key={res}
-                      onClick={() => setResolution(res)}
-                      className={`py-1.5 rounded-lg text-[11px] font-medium border transition-all outline-none ${
-                        resolution === res 
-                        ? 'bg-white text-black border-white shadow-lg' 
-                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-600/40 hover:to-blue-600/40 hover:text-white hover:border-purple-500/30'
-                      }`}
-                    >
-                      {res}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Framerate Selection */}
-              <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Frame Rate</label>
-                <div className="flex gap-1.5">
-                  {framerates.map((fps) => (
-                    <button
-                      key={fps}
-                      onClick={() => setFramerate(fps)}
-                      className={`flex-1 py-1.5 rounded-lg text-[11px] font-medium border transition-all outline-none ${
-                        framerate === fps 
-                        ? 'bg-white text-black border-white shadow-lg' 
-                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-600/40 hover:to-blue-600/40 hover:text-white hover:border-purple-500/30'
-                      }`}
-                    >
-                      {fps}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Bottom Accent */}
-              <div className="pt-1 flex justify-center">
-                <div className="w-10 h-1 bg-white/10 rounded-full" />
-              </div>
-            </motion.div>
+            {/* ... existing content ... */}
           </PopoverContent>
         </Popover>
 
