@@ -11,6 +11,9 @@ import {
   RotateCcw,
   RotateCw,
   Crown,
+  Video,
+  AudioLines,
+  Image,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -44,15 +47,29 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
               <div className="flex items-center gap-1">
                 <Crown className="h-4 w-4 text-white" />
+                <Video className="h-3 w-3 text-white" />
+                <AudioLines className="h-3 w-3 text-white" />
+                <Image className="h-3 w-3 text-white" />
               </div>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="start"
             sideOffset={8}
-            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md"
+            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md space-x-2"
           >
-            {/* No icon items as requested */}
+            <DropdownMenuItem>
+              <Video className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Video</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <AudioLines className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Audio</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Image className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Photo</span>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
