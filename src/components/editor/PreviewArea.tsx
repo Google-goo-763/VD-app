@@ -15,7 +15,7 @@ import {
   Square,
   RectangleHorizontal,
   Video,
-  Audio,
+  AudioLines, // ← corrected import
   Image,
 } from 'lucide-react';
 import {
@@ -54,7 +54,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
               <div className="flex items-center gap-1">
                 <Crown className="h-4 w-4 text-white" />
                 <Video className="h-3 w-3 text-white" />
-                <Audio className="h-3 w-3 text-white" />
+                <AudioLines className="h-3 w-3 text-white" /> {/* ← updated */}
                 <Image className="h-3 w-3 text-white" />
               </div>
             </button>
