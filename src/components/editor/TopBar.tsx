@@ -102,7 +102,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             >
               {/* Project Name */}
               <div className="space-y-1.5">
-                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Project Name</label>
+                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Project Name</label>
                 <div className="flex gap-2">
                   <input 
                     type="text" 
@@ -127,7 +127,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
 
               {/* Resolution Selection */}
               <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Resolution</label>
+                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Resolution</label>
                 <div className="grid grid-cols-3 gap-1.5">
                   {resolutions.map((res) => (
                     <button
@@ -147,7 +147,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
 
               {/* Framerate Selection */}
               <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Frame Rate</label>
+                <label className="text-[10px] uppercase tracking-widest text-purple-400 font-bold">Frame Rate</label>
                 <div className="flex gap-1.5">
                   {framerates.map((fps) => (
                     <button
