@@ -11,20 +11,12 @@ import {
   RotateCcw,
   RotateCw,
   Crown,
-  Camera,
-  Monitor,
-  Square,
-  RectangleHorizontal,
-  Video,
-  AudioLines,
-  Image,
 } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 
 interface PreviewAreaProps {
@@ -52,36 +44,23 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
               <div className="flex items-center gap-1">
                 <Crown className="h-4 w-4 text-white" />
-                <Video className="h-3 w-3 text-white" />
-                <AudioLines className="h-3 w-3 text-white" />
-                <Image className="h-3 w-3 text-white" />
               </div>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="start"
             sideOffset={8}
-            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md space-x-2"
+            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md"
           >
-            <DropdownMenuItem>
-              <Video className="h-4 w-4 text-white" />
-              <span className="text-white text-sm">Video</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <AudioLines className="h-4 w-4 text-white" />
-              <span className="text-white text-sm">Audio</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Image className="h-4 w-4 text-white" />
-              <span className="text-white text-sm">Photo</span>
-            </DropdownMenuItem>
+            {/* No icon items as requested */}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
       {/* Video Placeholder */}
       <div className="flex-1 flex items-center justify-center p-6 md:p-12">
-        <motion.div          layout
+        <motion.div
+          layout
           className={`bg-[#1a1a1a] flex items-center justify-center rounded-2xl border border-white/5 transition-all duration-500 ease-in-out shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden relative group ${
             selectedRatio === '16:9'
               ? 'w-full max-w-6xl aspect-video'
