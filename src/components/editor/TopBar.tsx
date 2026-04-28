@@ -38,13 +38,13 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
         {/* Aspect Ratio Selector */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <div className="flex items-center gap-2 bg-[#1a1a1a] border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-[#252525] transition-all">
+            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-white/10 transition-all">
               {aspectRatio === '16:9' ? <Monitor size={14} /> : <Smartphone size={14} />}
               {aspectRatio}
               <ChevronDown className="w-3 h-3 opacity-50" />
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" className="bg-[#1a1a1a]/90 backdrop-blur-xl border-white/10 text-white min-w-[140px]">
+          <DropdownMenuContent align="center" className="bg-black/40 backdrop-blur-2xl backdrop-saturate-150 border-white/10 text-white min-w-[140px] shadow-2xl">
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
               className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2"
@@ -69,14 +69,14 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
         {/* Export Settings Popover */}
         <Popover>
           <PopoverTrigger asChild>
-            <div className="flex items-center gap-1 bg-[#1a1a1a] border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-[#252525] transition-all">
+            <div className="flex items-center gap-1 bg-white/5 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-white/10 transition-all">
               {resolution.toUpperCase()}
               <ChevronDown className="w-3 h-3 opacity-50" />
             </div>
           </PopoverTrigger>
           <PopoverContent 
             align="center" 
-            className="w-72 bg-[#1a1a1a]/70 backdrop-blur-xl border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden"
+            className="w-72 bg-black/40 backdrop-blur-3xl backdrop-saturate-150 border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 5 }}
