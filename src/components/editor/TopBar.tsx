@@ -60,10 +60,13 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
               <ChevronDown className="w-3 h-3 opacity-50" />
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" className="bg-white/10 backdrop-blur-lg border-white/10 text-white min-w-[140px] shadow-2xl">
+          <DropdownMenuContent 
+            align="center" 
+            className="bg-white/10 backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl rounded-2xl overflow-hidden p-1"
+          >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -72,7 +75,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
