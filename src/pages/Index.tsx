@@ -13,14 +13,12 @@ const Index = () => {
     <div className="flex flex-col h-screen bg-[#0a0a0a] overflow-hidden">
       <TopBar aspectRatio={aspectRatio} onRatioChange={setAspectRatio} />
       
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        
-        <main className="flex-1 flex flex-col overflow-hidden">
-          <PreviewArea aspectRatio={aspectRatio} />
-          <Timeline />
-        </main>
-      </div>
+      <main className="flex-1 flex flex-col overflow-hidden">
+        <PreviewArea aspectRatio={aspectRatio} />
+        <Timeline />
+      </main>
+
+      <Sidebar />
     </div>
   );
 };
