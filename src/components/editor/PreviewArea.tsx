@@ -9,19 +9,17 @@ import {
   Layers,
   RotateCcw,
   RotateCw,
-  Settings,
+  Crown, // premium icon
   Camera,
   Monitor,
   Square,
   RectangleHorizontal,
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 
 interface PreviewAreaProps {
@@ -39,17 +37,15 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
   return (
     <div
       className={`flex flex-col bg-black relative transition-all duration-500 ease-in-out ${
-        isMaximized
-          ? 'fixed inset-0 z-[100] w-screen h-screen'
-          : 'flex-1'
+        isMaximized ? 'fixed inset-0 z-[100] w-screen h-screen' : 'flex-1'
       }`}
     >
-      {/* Top‑left circular button with dropdown */}
+      {/* Top‑left circular button with empty dropdown */}
       <div className="absolute top-3 left-3 z-20">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-              <Settings className="h-4 w-4 text-white" />
+              <Crown className="h-4 w-4 text-white" />
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
@@ -57,23 +53,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
             sideOffset={8}
             className="w-48 bg-black/80 backdrop-blur-md border border-white/10 rounded-md p-2"
           >
-            <DropdownMenuItem onSelect={() => changeRatio('16:9')}>
-              <RectangleHorizontal className="mr-2 h-4 w-4" />
-              16:9
-            </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => changeRatio('9:16')}>
-              <RectangleHorizontal className="mr-2 h-4 w-4 transform rotate-90" />
-              9:16
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem onSelect={() => console.log('Resolution settings')}>
-              <Monitor className="mr-2 h-4 w-4" />
-              Resolution
-            </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => console.log('Camera settings')}>
-              <Camera className="mr-2 h-4 w-4" />
-              Camera
-            </DropdownMenuItem>
+            {/* Menu intentionally left blank for future items */}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -92,8 +72,6 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
           <span className="text-gray-600 text-[10px] font-bold uppercase tracking-[0.2em] z-10">
             {selectedRatio} Preview
           </span>
-
-          {/* Subtle Glow Effect */}
           <div className="absolute -inset-px bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
         </motion.div>
       </div>
