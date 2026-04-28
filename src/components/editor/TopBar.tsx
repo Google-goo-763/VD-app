@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { X, Upload, ChevronDown, Monitor, Smartphone, Check, Save } from 'lucide-react';
+import { X, Upload, ChevronDown, Monitor, Smartphone, Check, Save, Sparkles } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -119,7 +119,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                       onClick={handleSaveName}
                       className="bg-white text-black p-2 rounded-lg hover:bg-white/90 transition-colors"
                     >
-                      <Check size={16} />
+                      <Sparkles size={16} />
                     </button>
                   )}
                 </div>
