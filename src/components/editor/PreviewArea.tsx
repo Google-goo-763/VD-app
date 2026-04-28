@@ -20,6 +20,8 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 
 interface PreviewAreaProps {
@@ -37,10 +39,12 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
   return (
     <div
       className={`flex flex-col bg-black relative transition-all duration-500 ease-in-out ${
-        isMaximized ? 'fixed inset-0 z-[100] w-screen h-screen' : 'flex-1'
+        isMaximized
+          ? 'fixed inset-0 z-[100] w-screen h-screen'
+          : 'flex-1'
       }`}
     >
-      {/* Top‑left circular button with empty dropdown */}
+      {/* Top‑left circular button with dropdown */}
       <div className="absolute top-3 left-3 z-20">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -51,7 +55,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
           <DropdownMenuContent
             align="start"
             sideOffset={8}
-            className="w-48 bg-black/80 backdrop-blur-md border border-white/10 rounded-md p-2"
+            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md"
           >
             {/* Menu intentionally left blank for future items */}
           </DropdownMenuContent>
