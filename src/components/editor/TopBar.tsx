@@ -44,7 +44,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-3 bg-[#121212] text-white border-b border-white/5 z-50">
+    <div className="relative flex items-center justify-between px-4 py-3 bg-[#121212] text-white border-b border-white/5 z-[110]">
       <Toaster position="bottom-center" />
       <div className="flex items-center gap-4">
         <X className="w-6 h-6 cursor-pointer hover:text-gray-400 transition-colors" />
@@ -62,7 +62,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </DropdownMenuTrigger>
           <DropdownMenuContent 
             align="center" 
-            className="bg-white/10 backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl rounded-2xl overflow-hidden p-1"
+            className="bg-[#1a1a1a] backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl rounded-2xl overflow-hidden p-1 z-[120]"
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
@@ -95,7 +95,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </PopoverTrigger>
           <PopoverContent 
             align="center" 
-            className="w-72 bg-white/10 backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden"
+            className="w-72 bg-[#1a1a1a] backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden z-[120]"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 5 }}
