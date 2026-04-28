@@ -62,11 +62,11 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </DropdownMenuTrigger>
           <DropdownMenuContent 
             align="center" 
-            className="bg-[#1a1a1a] backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl rounded-2xl overflow-hidden p-1 z-[120]"
+            className="bg-[#1a1a1a] backdrop-blur-lg border-white/10 text-white min-w-[160px] shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden p-1 z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300"
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white"
+              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white hover:bg-gradient-to-r hover:from-purple-500/40 hover:to-blue-500/40 hover:text-white hover:border-transparent"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -75,7 +75,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white"
+              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white hover:bg-gradient-to-r hover:from-purple-500/40 hover:to-blue-500/40 hover:text-white hover:border-transparent"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
@@ -95,7 +95,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </PopoverTrigger>
           <PopoverContent 
             align="center" 
-            className="w-72 bg-[#1a1a1a] backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden z-[120]"
+            className="w-72 bg-[#1a1a1a] backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl shadow-purple-500/20 rounded-2xl overflow-hidden z-[120] hover:shadow-[0_0_30px_rgba(168,85,247,0.3),0_0_60px_rgba(59,130,246,0.2)] hover:border-purple-500/30 transition-all duration-300"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 5 }}
