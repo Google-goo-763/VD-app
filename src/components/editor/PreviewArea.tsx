@@ -47,9 +47,6 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
               <div className="flex items-center gap-1">
                 <Crown className="h-4 w-4 text-white" />
-                <Video className="h-3 w-3 text-white" />
-                <AudioLines className="h-3 w-3 text-white" />
-                <Image className="h-3 w-3 text-white" />
               </div>
             </button>
           </DropdownMenuTrigger>
