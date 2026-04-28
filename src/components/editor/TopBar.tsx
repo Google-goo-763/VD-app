@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Upload, ChevronDown, Monitor, Smartphone, Check, Save, Sparkles } from 'lucide-react';
 import {
   DropdownMenu,
