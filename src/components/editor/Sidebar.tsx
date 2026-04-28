@@ -7,8 +7,7 @@ import {
   Type, 
   Sticker, 
   Sparkles, 
-  Layers, 
-  Scissors
+  Layers
 } from 'lucide-react';
 
 const SidebarItem = ({ icon: Icon, label, active = false }: { icon: any, label: string, active?: boolean }) => (
@@ -28,7 +27,6 @@ const Sidebar = () => {
         <SidebarItem icon={Sticker} label="Stickers" />
         <SidebarItem icon={Sparkles} label="Effects" />
         <SidebarItem icon={Layers} label="Transitions" />
-        <SidebarItem icon={Scissors} label="Filters" />
       </div>
     </aside>
   );
