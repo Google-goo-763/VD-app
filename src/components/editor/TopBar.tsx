@@ -66,7 +66,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30 outline-none"
+              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -75,7 +75,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30 outline-none"
+              className="flex items-center justify-between gap-2 cursor-pointer py-2.5 px-3 rounded-xl transition-all border border-transparent outline-none focus:bg-transparent focus:text-white"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
