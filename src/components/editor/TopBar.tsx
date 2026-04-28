@@ -54,7 +54,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
         {/* Aspect Ratio Selector */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-white/20 transition-all">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-gradient-to-tr hover:from-purple-500/20 hover:to-blue-500/20 transition-all">
               {aspectRatio === '16:9' ? <Monitor size={14} /> : <Smartphone size={14} />}
               {aspectRatio}
               <ChevronDown className="w-3 h-3 opacity-50" />
@@ -66,7 +66,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-500/20 focus:to-blue-500/20 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -75,7 +75,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-500/20 focus:to-blue-500/20 focus:text-white py-2.5 px-3 rounded-xl transition-colors"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
@@ -88,7 +88,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
         {/* Export Settings Popover */}
         <Popover>
           <PopoverTrigger asChild>
-            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-white/20 transition-all">
+            <div className="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer hover:bg-gradient-to-tr hover:from-purple-500/20 hover:to-blue-500/20 transition-all">
               {resolution.toUpperCase()}
               <ChevronDown className="w-3 h-3 opacity-50" />
             </div>
@@ -139,7 +139,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                       className={`py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
                         resolution === res 
                         ? 'bg-white text-black border-white shadow-lg' 
-                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-500/20 hover:to-blue-500/20 hover:text-white'
                       }`}
                     >
                       {res}
@@ -159,7 +159,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                       className={`flex-1 py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
                         framerate === fps 
                         ? 'bg-white text-black border-white shadow-lg' 
-                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-500/20 hover:to-blue-500/20 hover:text-white'
                       }`}
                     >
                       {fps}
