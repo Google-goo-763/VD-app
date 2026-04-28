@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Maximize2,
   Minimize2,
@@ -9,13 +10,13 @@ import {
   Layers,
   RotateCcw,
   RotateCw,
-  Crown, // premium icon
+  Crown,
   Camera,
   Monitor,
   Square,
   RectangleHorizontal,
   Video,
-  AudioLines, // ← corrected import
+  AudioLines,
   Image,
 } from 'lucide-react';
 import {
@@ -41,9 +42,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
   return (
     <div
       className={`flex flex-col bg-black relative transition-all duration-500 ease-in-out ${
-        isMaximized
-          ? 'fixed inset-0 z-[100] w-screen h-screen'
-          : 'flex-1'
+        isMaximized ? 'fixed inset-0 z-[100] w-screen h-screen' : 'flex-1'
       }`}
     >
       {/* Top‑left circular button with dropdown */}
@@ -54,7 +53,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
               <div className="flex items-center gap-1">
                 <Crown className="h-4 w-4 text-white" />
                 <Video className="h-3 w-3 text-white" />
-                <AudioLines className="h-3 w-3 text-white" /> {/* ← updated */}
+                <AudioLines className="h-3 w-3 text-white" />
                 <Image className="h-3 w-3 text-white" />
               </div>
             </button>
