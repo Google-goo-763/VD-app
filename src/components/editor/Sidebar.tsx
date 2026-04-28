@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { 
-  LayoutGrid, 
   Music, 
   Type, 
   Sticker, 
@@ -21,7 +20,6 @@ const Sidebar = () => {
   return (
     <aside className="h-16 bg-[#121212] border-t border-white/5 flex items-center">
       <div className="flex-1 flex items-center h-full px-2">
-        <SidebarItem icon={LayoutGrid} label="Media" active />
         <SidebarItem icon={Music} label="Audio" />
         <SidebarItem icon={Type} label="Text" />
         <SidebarItem icon={Sticker} label="Stickers" />
