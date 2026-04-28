@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { X, Upload, ChevronDown, Monitor, Smartphone, Check } from 'lucide-react';
+import { X, Upload, ChevronDown, Monitor, Smartphone, Check, Save } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { motion } from "framer-motion";
+import toast, { Toaster } from 'react-hot-toast';
 
 interface TopBarProps {
   aspectRatio: '16:9' | '9:16';
@@ -24,12 +25,27 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
   const [resolution, setResolution] = useState('1080p');
   const [framerate, setFramerate] = useState('60fps');
   const [projectName, setProjectName] = useState('Untitled Project');
+  const [isEditing, setIsEditing] = useState(false);
 
   const resolutions = ['1080p', '720p', '360p'];
   const framerates = ['60fps', '30fps'];
 
+  const handleSaveName = () => {
+    toast.success(`Project renamed to "${projectName}"`, {
+      style: {
+        borderRadius: '12px',
+        background: 'rgba(255, 255, 255, 0.1)',
+        color: '#fff',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+      },
+    });
+    setIsEditing(false);
+  };
+
   return (
     <div className="flex items-center justify-between px-4 py-3 bg-[#121212] text-white border-b border-white/5 z-50">
+      <Toaster position="bottom-center" />
       <div className="flex items-center gap-4">
         <X className="w-6 h-6 cursor-pointer hover:text-gray-400 transition-colors" />
       </div>
@@ -87,13 +103,26 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
               {/* Project Name */}
               <div className="space-y-1.5">
                 <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Project Name</label>
-                <input 
-                  type="text" 
-                  value={projectName}
-                  onChange={(e) => setProjectName(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 focus:outline-none focus:border-white/30 transition-colors text-sm text-white"
-                  placeholder="Enter name..."
-                />
+                <div className="flex gap-2">
+                  <input 
+                    type="text" 
+                    value={projectName}
+                    onChange={(e) => {
+                      setProjectName(e.target.value);
+                      setIsEditing(true);
+                    }}
+                    className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 focus:outline-none focus:border-white/30 transition-colors text-sm text-white"
+                    placeholder="Enter name..."
+                  />
+                  {isEditing && (
+                    <button 
+                      onClick={handleSaveName}
+                      className="bg-white text-black p-2 rounded-lg hover:bg-white/90 transition-colors"
+                    >
+                      <Check size={16} />
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Resolution Selection */}
