@@ -66,7 +66,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           >
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30 outline-none"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -75,7 +75,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-gradient-to-tr focus:from-purple-600/40 focus:to-blue-600/40 focus:text-white py-2.5 px-3 rounded-xl transition-all border border-transparent focus:border-purple-500/30 outline-none"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
@@ -136,7 +136,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                     <button
                       key={res}
                       onClick={() => setResolution(res)}
-                      className={`py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
+                      className={`py-1.5 rounded-lg text-[11px] font-medium border transition-all outline-none ${
                         resolution === res 
                         ? 'bg-white text-black border-white shadow-lg' 
                         : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-600/40 hover:to-blue-600/40 hover:text-white hover:border-purple-500/30'
@@ -156,7 +156,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                     <button
                       key={fps}
                       onClick={() => setFramerate(fps)}
-                      className={`flex-1 py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
+                      className={`flex-1 py-1.5 rounded-lg text-[11px] font-medium border transition-all outline-none ${
                         framerate === fps 
                         ? 'bg-white text-black border-white shadow-lg' 
                         : 'bg-white/5 border-white/5 text-white/50 hover:bg-gradient-to-tr hover:from-purple-600/40 hover:to-blue-600/40 hover:text-white hover:border-purple-500/30'
