@@ -14,8 +14,10 @@ import {
   Monitor,
   Square,
   RectangleHorizontal,
+  Video,
+  Audio,
+  Image,
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -49,7 +51,12 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-              <Crown className="h-4 w-4 text-white" />
+              <div className="flex items-center gap-1">
+                <Crown className="h-4 w-4 text-white" />
+                <Video className="h-3 w-3 text-white" />
+                <Audio className="h-3 w-3 text-white" />
+                <Image className="h-3 w-3 text-white" />
+              </div>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
