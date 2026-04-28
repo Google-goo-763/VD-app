@@ -43,17 +43,17 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
       </div>
 
       {/* Preview Controls */}
-      <div className={`grid grid-cols-3 items-center px-6 py-2.5 bg-[#0a0a0a]/80 backdrop-blur-xl border-t border-white/5 ${isMaximized ? 'pb-6' : ''}`}>
+      <div className={`grid grid-cols-3 items-center px-6 py-1.5 bg-[#0a0a0a]/80 backdrop-blur-xl border-t border-white/5 ${isMaximized ? 'pb-4' : ''}`}>
         {/* Left Controls */}
         <div className="flex items-center">
           <button 
             onClick={toggleMaximize}
-            className="p-2 hover:bg-white/5 rounded-full transition-all active:scale-90 group"
+            className="p-1.5 hover:bg-white/5 rounded-full transition-all active:scale-90 group"
           >
             {isMaximized ? (
-              <Minimize2 className="w-4 h-4 text-purple-400 group-hover:text-purple-300 transition-colors" />
+              <Minimize2 className="w-3.5 h-3.5 text-purple-400 group-hover:text-purple-300 transition-colors" />
             ) : (
-              <Maximize2 className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              <Maximize2 className="w-3.5 h-3.5 text-white/70 group-hover:text-white transition-colors" />
             )}
           </button>
         </div>
@@ -62,22 +62,22 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
         <div className="flex items-center justify-center">
           <button 
             onClick={() => setIsPlaying(!isPlaying)}
-            className="w-10 h-10 flex items-center justify-center bg-white rounded-full hover:scale-110 transition-all active:scale-95 shadow-xl shadow-white/5"
+            className="w-9 h-9 flex items-center justify-center bg-white rounded-full hover:scale-110 transition-all active:scale-95 shadow-xl shadow-white/5"
           >
             {isPlaying ? (
-              <Pause className="w-4 h-4 text-black fill-black" />
+              <Pause className="w-3.5 h-3.5 text-black fill-black" />
             ) : (
-              <Play className="w-4 h-4 text-black fill-black ml-0.5" />
+              <Play className="w-3.5 h-3.5 text-black fill-black ml-0.5" />
             )}
           </button>
         </div>
 
         {/* Right Controls */}
-        <div className="flex items-center justify-end gap-5">
-          <Layers className="w-3.5 h-3.5 text-white/50 hover:text-white cursor-pointer transition-colors" />
-          <div className="flex items-center gap-3">
-            <RotateCcw className="w-3.5 h-3.5 text-white/50 hover:text-white cursor-pointer transition-colors" />
-            <RotateCw className="w-3.5 h-3.5 text-white/50 hover:text-white cursor-pointer transition-colors" />
+        <div className="flex items-center justify-end gap-4">
+          <Layers className="w-3 h-3 text-white/50 hover:text-white cursor-pointer transition-colors" />
+          <div className="flex items-center gap-2.5">
+            <RotateCcw className="w-3 h-3 text-white/50 hover:text-white cursor-pointer transition-colors" />
+            <RotateCw className="w-3 h-3 text-white/50 hover:text-white cursor-pointer transition-colors" />
           </div>
         </div>
       </div>
