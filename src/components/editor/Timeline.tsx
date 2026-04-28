@@ -56,7 +56,7 @@ const Timeline = () => {
   return (
     <div 
       ref={timelineRef}
-      className="bg-[#121212] border-t border-[#2a2a2a] flex-1 relative overflow-hidden cursor-pointer select-none"
+      className="bg-[#121212] border-t border-[#2a2a2a] h-[55vh] relative overflow-hidden cursor-pointer select-none"
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
     >

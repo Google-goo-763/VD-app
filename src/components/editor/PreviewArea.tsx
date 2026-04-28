@@ -11,7 +11,7 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className="flex flex-col bg-black relative h-[40vh]">
+    <div className="flex flex-col bg-black relative h-[45vh]">
       {/* Video Placeholder */}
       <div className="flex-1 flex items-center justify-center p-6">
         <div 
