@@ -61,17 +61,27 @@ const PreviewArea = ({ aspectRatio }: PreviewAreaProps) => {
           <DropdownMenuContent
             align="start"
             sideOffset={8}
-            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md"
+            className="flex flex-row px-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-md space-x-2"
           >
-            {/* Menu intentionally left blank for future items */}
+            <DropdownMenuItem>
+              <Video className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Video</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <AudioLines className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Audio</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Image className="h-4 w-4 text-white" />
+              <span className="text-white text-sm">Photo</span>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
       {/* Video Placeholder */}
       <div className="flex-1 flex items-center justify-center p-6 md:p-12">
-        <motion.div
-          layout
+        <motion.div          layout
           className={`bg-[#1a1a1a] flex items-center justify-center rounded-2xl border border-white/5 transition-all duration-500 ease-in-out shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden relative group ${
             selectedRatio === '16:9'
               ? 'w-full max-w-6xl aspect-video'
