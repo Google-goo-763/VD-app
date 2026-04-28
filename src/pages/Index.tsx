@@ -1,18 +1,26 @@
 "use client";
 
-import React from 'react';
-import TopBar from '@/components/editor/TopBar';
-import PreviewArea from '@/components/editor/PreviewArea';
-import Timeline from '@/components/editor/Timeline';
-import BottomToolbar from '@/components/editor/BottomToolbar';
+import React, { useState } from 'react';
+import TopBar from '../components/editor/TopBar';
+import PreviewArea from '../components/editor/PreviewArea';
+import Timeline from '../components/editor/Timeline';
+import Sidebar from '../components/editor/Sidebar';
 
 const Index = () => {
+  const [aspectRatio, setAspectRatio] = useState<'16:9' | '9:16'>('16:9');
+
   return (
-    <div className="flex flex-col h-screen bg-black overflow-hidden max-w-md mx-auto border-x border-gray-800">
-      <TopBar />
-      <PreviewArea />
-      <Timeline />
-      <BottomToolbar />
+    <div className="flex flex-col h-screen bg-[#0a0a0a] overflow-hidden">
+      <TopBar aspectRatio={aspectRatio} onRatioChange={setAspectRatio} />
+      
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
+        
+        <main className="flex-1 flex flex-col overflow-hidden">
+          <PreviewArea aspectRatio={aspectRatio} />
+          <Timeline />
+        </main>
+      </div>
     </div>
   );
 };
