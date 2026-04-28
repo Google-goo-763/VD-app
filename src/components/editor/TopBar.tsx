@@ -44,10 +44,10 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
               <ChevronDown className="w-3 h-3 opacity-50" />
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" className="bg-white/80 backdrop-blur-2xl backdrop-saturate-150 border-white/20 text-black min-w-[140px] shadow-2xl">
+          <DropdownMenuContent align="center" className="bg-white/10 backdrop-blur-lg border-white/10 text-white min-w-[140px] shadow-2xl">
             <DropdownMenuItem 
               onClick={() => onRatioChange('16:9')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-black/5 focus:text-black py-2"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2"
             >
               <div className="flex items-center gap-2">
                 <Monitor size={14} /> 16:9 Landscape
@@ -56,7 +56,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             </DropdownMenuItem>
             <DropdownMenuItem 
               onClick={() => onRatioChange('9:16')}
-              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-black/5 focus:text-black py-2"
+              className="flex items-center justify-between gap-2 cursor-pointer focus:bg-white/10 focus:text-white py-2"
             >
               <div className="flex items-center gap-2">
                 <Smartphone size={14} /> 9:16 Portrait
@@ -76,7 +76,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
           </PopoverTrigger>
           <PopoverContent 
             align="center" 
-            className="w-72 bg-white/80 backdrop-blur-3xl backdrop-saturate-200 border-white/30 p-5 text-black shadow-2xl rounded-2xl overflow-hidden"
+            className="w-72 bg-white/10 backdrop-blur-lg border-white/10 p-5 text-white shadow-2xl rounded-2xl overflow-hidden"
           >
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 5 }}
@@ -86,19 +86,19 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
             >
               {/* Project Name */}
               <div className="space-y-1.5">
-                <label className="text-[10px] uppercase tracking-widest text-black/40 font-bold">Project Name</label>
+                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Project Name</label>
                 <input 
                   type="text" 
                   value={projectName}
                   onChange={(e) => setProjectName(e.target.value)}
-                  className="w-full bg-black/5 border border-black/10 rounded-lg px-3 py-2 focus:outline-none focus:border-black/20 transition-colors text-sm text-black"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 focus:outline-none focus:border-white/30 transition-colors text-sm text-white"
                   placeholder="Enter name..."
                 />
               </div>
 
               {/* Resolution Selection */}
               <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-black/40 font-bold">Resolution</label>
+                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Resolution</label>
                 <div className="grid grid-cols-3 gap-1.5">
                   {resolutions.map((res) => (
                     <button
@@ -106,8 +106,8 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                       onClick={() => setResolution(res)}
                       className={`py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
                         resolution === res 
-                        ? 'bg-black text-white border-black shadow-lg' 
-                        : 'bg-black/5 border-black/5 text-black/50 hover:bg-black/10 hover:text-black'
+                        ? 'bg-white text-black border-white shadow-lg' 
+                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white'
                       }`}
                     >
                       {res}
@@ -118,7 +118,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
 
               {/* Framerate Selection */}
               <div className="space-y-2.5">
-                <label className="text-[10px] uppercase tracking-widest text-black/40 font-bold">Frame Rate</label>
+                <label className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Frame Rate</label>
                 <div className="flex gap-1.5">
                   {framerates.map((fps) => (
                     <button
@@ -126,8 +126,8 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
                       onClick={() => setFramerate(fps)}
                       className={`flex-1 py-1.5 rounded-lg text-[11px] font-medium border transition-all ${
                         framerate === fps 
-                        ? 'bg-black text-white border-black shadow-lg' 
-                        : 'bg-black/5 border-black/5 text-black/50 hover:bg-black/10 hover:text-black'
+                        ? 'bg-white text-black border-white shadow-lg' 
+                        : 'bg-white/5 border-white/5 text-white/50 hover:bg-white/10 hover:text-white'
                       }`}
                     >
                       {fps}
@@ -138,7 +138,7 @@ const TopBar = ({ aspectRatio, onRatioChange }: TopBarProps) => {
 
               {/* Bottom Accent */}
               <div className="pt-1 flex justify-center">
-                <div className="w-10 h-1 bg-black/10 rounded-full" />
+                <div className="w-10 h-1 bg-white/10 rounded-full" />
               </div>
             </motion.div>
           </PopoverContent>
