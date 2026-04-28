@@ -33,8 +33,8 @@ const Sidebar = () => {
       </div>
       
       <div className="px-4 border-l border-white/5 h-full flex items-center">
-        <button className="h-10 w-10 bg-[#2a2a2a] rounded-lg flex items-center justify-center hover:bg-[#3a3a3a] transition-colors">
-          <Plus size={20} className="text-white" />
+        <button className="h-9 w-9 bg-[#2a2a2a] rounded-lg flex items-center justify-center hover:bg-[#3a3a3a] transition-colors">
+          <Plus size={18} className="text-white" />
         </button>
       </div>
     </aside>
